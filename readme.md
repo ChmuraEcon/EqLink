@@ -45,13 +45,10 @@ print(results)
 ```
 
 ## Installation
-Since EqLink isn't yet publicly available, there is no package available on PyPI. This means in order to use EqLink, you get to learn how to install a pip package locally!
-- First things first, download the release branch of EqLink. This is the current, most cleaned up version that we have!
-- Second, you'll want to boot up a terminal instance and do the following:
+Since EqLink isn't fully released yet, there is no package available on PyPI. This means in order to use EqLink, you get to learn how to install a pip package from a github url!
+- First things first, you'll want to boot up a terminal instance and do the following:
 ```terminal
-python get-pip.py
-
-pip install -e C:\[path_to_your_EqLink_download]\
+pip install --upgrade https://github.com/ChmuraEcon/EqLink/tarball/main
 ```
 After that you are ready to go! Pretty easy!
 
