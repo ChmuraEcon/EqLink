@@ -1,0 +1,14 @@
+.env
+.pyc
+__pycache__
+.git
+*.egg-info
+.vscode
+.mypy_cache
+.pytest_cache
+.coverage
+.tox
+scratch_pad.py
+build
+py.typed
+.github
