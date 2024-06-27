@@ -1,0 +1,36 @@
+name: Test
+
+on:
+  - push
+  - pull_request
+
+env:
+  JOBSEQ_USERNAME: ${{ secrets.JOBSEQ_USERNAME }}
+  JOBSEQ_PASSWORD: ${{ secrets.JOBSEQ_PASSWORD }}
+
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+        python-version: ['3.10']
+
+    steps:
+
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v2
+      with:
+        python-version: ${{ matrix.python-version }}
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install tox tox-gh-actions
+
+    - name: Test with tox
+      run: tox
