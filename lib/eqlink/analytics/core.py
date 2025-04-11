@@ -476,7 +476,7 @@ class CoreAnalytics:
         soc_code: str = "00-0000",
         soc_type: int = 0,
         demographic_catagory: str = "A",
-        occ_level: str = "6",
+        occ_level: str = "7",
         as_frame: bool = False,
     ) -> Union[Any, pd.DataFrame]:
         """Runs the Occupation Diversity Analytic.

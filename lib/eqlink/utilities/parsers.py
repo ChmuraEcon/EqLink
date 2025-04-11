@@ -23,8 +23,10 @@ class Parse:
                 elif type(value) is dict:
                     if "displayText" in value:
                         row_values.append(value["displayText"])
+                    elif "displayValue" in value:                        
+                        row_values.append(value["displayValue"])
                     elif "code" in value:
-                        row_values.append(value["code"])
+                        row_values.append(value["code"])                                        
                     else:
                         raise ValueError
             table.append(row_values)
@@ -63,7 +65,15 @@ class Parse:
                     elif "code" in value:
                         row_values.append(value["code"])
                     else:
-                        raise ValueError
+                        def parse_nested_dict(d):
+                            if "displayText" in d:
+                                return d["displayText"]
+                            elif "code" in d:
+                                return d["code"]
+                            else:
+                                return {k: parse_nested_dict(v) if isinstance(v, dict) else v for k, v in d.items()}
+
+                        row_values.append(parse_nested_dict(value))
             table.append(row_values)
 
         dict_table = {}
