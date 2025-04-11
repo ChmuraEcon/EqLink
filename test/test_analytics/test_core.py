@@ -123,6 +123,16 @@ class TestShiftShare:
 
         assert type(datadict) == dict
 
+class TestOccupationDiversity:
+    def test_1(self):
+        cnxn.core.occupation_diversity(as_frame=True)
+
+        return
+    def test_T(self):
+        cnxn.core.occupation_diversity(as_frame=True, demographic_category="T")
+
+        return
+    
 
 class TestIndustryDiversity:
     def test_1(self):
