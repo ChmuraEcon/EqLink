@@ -5,4 +5,4 @@ from eqlink.analytics import RtiFilter, DfField
 
 __all__ = ["JobsEqConnection", "RtiFilter", "DfField"]
 
-__version__ = "0.4.dev2"
+__version__ = "0.5.dev2"
