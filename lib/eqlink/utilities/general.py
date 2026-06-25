@@ -61,9 +61,15 @@ class EqRequest:
         except rq.exceptions.RequestException as err:
             print(f"Other Error {err}")
         if response.status_code == 401:
-            raise rq.HTTPError(f"Code {response.status_code}: Bad Token")
+            raise rq.HTTPError(
+                f"{method} {url} failed with {response.status_code}: Bad Token. "
+                f"Response: {response.text[:500]}"
+            )
         elif response.status_code != 200:
-            raise rq.HTTPError(f"{response.status_code}: Bad Request")
+            raise rq.HTTPError(
+                f"{method} {url} failed with {response.status_code}: Bad Request. "
+                f"Response: {response.text[:500]}"
+            )
 
         return response
 
