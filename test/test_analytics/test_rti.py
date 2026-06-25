@@ -23,7 +23,7 @@ class TestRtiAnalyticsJobPostings:
     def test_2(self):
         dataframe: pd.Dataframe = cnxn.rti.job_postings(as_frame=True)
 
-        assert len(dataframe.columns) == 12
+        assert len(dataframe.columns) == 13
 
     def test_3(self):
         dataframe: pd.Dataframe = cnxn.rti.job_postings(as_frame=True)
