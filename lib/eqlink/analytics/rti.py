@@ -7,7 +7,7 @@ import json
 
 
 class RtiFilter:
-  
+
     def __init__(
         self,
         field: Optional[str] = None,
