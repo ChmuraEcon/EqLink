@@ -236,7 +236,7 @@ class Parse:
                 categories.append(category)
                 labels.append(valueset["label"])
                 counts.append(valueset["count"])
-                values.append(valueset["entryWages"])
+                values.append(valueset.get("entryWages"))
 
         parsed_table = {
             "Category": categories,
